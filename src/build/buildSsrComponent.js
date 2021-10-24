@@ -1,7 +1,7 @@
 let fs = require("flowfs/mkdirp");
 let rollup = require("rollup");
 let svelte = require("rollup-plugin-svelte");
-let resolve = require("@rollup/plugin-node-resolve");
+let { nodeResolve } = require("@rollup/plugin-node-resolve");
 let commonjs = require("@rollup/plugin-commonjs");
 let cssOnly = require("rollup-plugin-css-only");
 let json = require("@rollup/plugin-json");
@@ -49,7 +49,7 @@ module.exports = async function (path, config) {
                 },
             }),
 
-            resolve({
+            nodeResolve({
                 browser: true,
             }),
 

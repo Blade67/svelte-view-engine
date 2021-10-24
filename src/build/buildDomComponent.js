@@ -64,6 +64,7 @@ module.exports = async function (path, name, config) {
     let outputOptions = {
         name,
         format: dynamicImports ? "es" : transpile ? "cjs" : "iife",
+        exports: "default",
     };
 
     let bundle = await rollup.rollup(inputOptions);

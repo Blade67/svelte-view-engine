@@ -73,6 +73,7 @@ module.exports = async function (path, config) {
 
     let outputOptions = {
         format: "cjs",
+        exports: "default",
     };
 
     let bundle = await rollup.rollup(inputOptions);
